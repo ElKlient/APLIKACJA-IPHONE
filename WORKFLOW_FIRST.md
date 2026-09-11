@@ -1,5 +1,9 @@
 # WORKFLOW FIRST — Aplikacja iPhone
 
+## Pierwsza czynność
+
+Przeczytaj najpierw cały plik START_HERE.md. Jest on nadrzędną, kompletną instrukcją przejęcia projektu. Następnie przeczytaj HANDOFF.md.
+
 ## Cel
 
 Repozytorium jest głównym źródłem projektu aplikacji na iPhone. Właściciel opisuje zmianę w ChatGPT Work, a agent wykonuje implementację, testy, commit i push. Użytkownik nie powinien ręcznie kopiować kodu.
