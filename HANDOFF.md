@@ -9,7 +9,7 @@
 - Projekt Expo: race99/aplikacja-iphone.
 - Project ID: a4578175-e960-4393-9f1f-fcbe93e51b2a.
 - Workflow EAS dla iOS znajduje się w .eas/workflows/build-ios.yml.
-- Push uruchamiający pierwszy workflow wykonany 11.09.2026.
+- Repozytorium ElKlient/APLIKACJA-IPHONE połączone z Expo GitHub App.\n- Push uruchamiający pierwszy workflow wykonany po potwierdzeniu połączenia 11.09.2026.
 
 ## Uzgodniony workflow
 
