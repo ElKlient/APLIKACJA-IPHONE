@@ -15,9 +15,11 @@ Użytkownik nie chce ręcznie edytować plików ani wykonywać wielu komend. Age
 
 1. Utworzyć osobne repozytorium ElKlient/Aplikacja-iPhone.
 2. Wysłać przygotowany szkielet do main.
-3. Połączyć projekt z kontem Expo.
-4. Uruchomić pierwszy podgląd w Expo Go.
-5. Skonfigurować EAS Update.
+3. Projekt Expo utworzony na koncie race99.
+4. Project ID: a4578175-e960-4393-9f1f-fcbe93e51b2a.
+5. Konfiguracja EAS i workflow budowania iOS dodane do repozytorium.
+6. Połączyć repozytorium z Expo GitHub App w panelu projektu.
+7. Uruchomić pierwszy podgląd lub build na iPhone.
 6. Później skonfigurować Apple Developer, TestFlight i App Store.
 
 ## Ważne

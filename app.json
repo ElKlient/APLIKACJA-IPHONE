@@ -2,10 +2,22 @@
   "expo": {
     "name": "Kółko i krzyżyk",
     "slug": "aplikacja-iphone",
+    "owner": "race99",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
     "jsEngine": "jsc",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/a4578175-e960-4393-9f1f-fcbe93e51b2a"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a4578175-e960-4393-9f1f-fcbe93e51b2a"
+      }
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "pl.elklient.aplikacjaiphone"
