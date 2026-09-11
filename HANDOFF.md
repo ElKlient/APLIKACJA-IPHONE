@@ -6,6 +6,10 @@
 - Pierwszy prototyp: grywalne kółko i krzyżyk dla dwóch osób.
 - Interfejs: pionowy, ciemny i dotykowy.
 - Kod aplikacji: App.js.
+- Projekt Expo: race99/aplikacja-iphone.
+- Project ID: a4578175-e960-4393-9f1f-fcbe93e51b2a.
+- Workflow EAS dla iOS znajduje się w .eas/workflows/build-ios.yml.
+- Push uruchamiający pierwszy workflow wykonany 11.09.2026.
 
 ## Uzgodniony workflow
 
@@ -13,14 +17,10 @@ Użytkownik nie chce ręcznie edytować plików ani wykonywać wielu komend. Age
 
 ## Kolejne kroki
 
-1. Utworzyć osobne repozytorium ElKlient/Aplikacja-iPhone.
-2. Wysłać przygotowany szkielet do main.
-3. Projekt Expo utworzony na koncie race99.
-4. Project ID: a4578175-e960-4393-9f1f-fcbe93e51b2a.
-5. Konfiguracja EAS i workflow budowania iOS dodane do repozytorium.
-6. Połączyć repozytorium z Expo GitHub App w panelu projektu.
-7. Uruchomić pierwszy podgląd lub build na iPhone.
-6. Później skonfigurować Apple Developer, TestFlight i App Store.
+1. Sprawdzić wynik workflow EAS po pushu.
+2. Udostępnić pierwszy build do instalacji na iPhonie.
+3. Skonfigurować EAS Update dla kolejnych poprawek.
+4. Później skonfigurować Apple Developer, TestFlight i App Store.
 
 ## Ważne
 
