@@ -1,13 +1,12 @@
-name: Buduj aplikację iPhone
+name: Publikuj podgląd na iPhone
 
 on:
   push:
     branches: ['main']
 
 jobs:
-  build_ios:
-    name: Build iOS
-    type: build
+  publish_preview:
+    name: Publikuj do Expo Go
+    type: update
     params:
-      platform: ios
-      profile: preview
+      branch: main
