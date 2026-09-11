@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "Kółko i krzyżyk",
+    "slug": "aplikacja-iphone",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "jsEngine": "jsc",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "pl.elklient.aplikacjaiphone"
+    }
+  }
+}
