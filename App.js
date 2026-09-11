@@ -15,6 +15,26 @@ function findWinner(board) {
   return board.every(Boolean) ? "draw" : null;
 }
 
+function BMWBadge() {
+  return (
+    <View style={styles.bmwOuter}>
+      <View style={styles.bmwInner}>
+        <Text style={styles.bmwText}>BMW</Text>
+      </View>
+    </View>
+  );
+}
+
+function AudiBadge() {
+  return (
+    <View style={styles.audiBadge}>
+      {[0, 1, 2, 3].map((ring) => (
+        <View key={ring} style={[styles.audiRing, ring > 0 && styles.audiRingOverlap]} />
+      ))}
+    </View>
+  );
+}
+
 export default function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [player, setPlayer] = useState("X");
@@ -33,9 +53,8 @@ export default function App() {
     setPlayer("X");
   };
 
-  let status = "Ruch gracza " + player;
-  if (winner === "draw") status = "Remis";
-  if (winner && winner !== "draw") status = "Wygrywa " + winner + "!";
+  let status = player === "X" ? "Ruch BMW" : "Ruch Audi";
+  if (winner) status = "Audi to gówno tylko BMW i M50";
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -56,7 +75,8 @@ export default function App() {
                     onPress={() => play(index)}
                     style={({ pressed }) => [styles.cell, pressed && !value && styles.pressed]}
                   >
-                    <Text style={[styles.mark, value === "X" ? styles.x : styles.o]}>{value}</Text>
+                    {value === "X" && <BMWBadge />}
+                    {value === "O" && <AudiBadge />}
                   </Pressable>
                 );
               })}
@@ -82,9 +102,12 @@ const styles = StyleSheet.create({
   row: { flex: 1, flexDirection: "row", gap: 8 },
   cell: { flex: 1, aspectRatio: 1, borderRadius: 18, backgroundColor: "#151c2d", alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: "#27324b" },
   pressed: { backgroundColor: "#202b43", transform: [{ scale: 0.97 }] },
-  mark: { fontSize: 58, fontWeight: "900" },
-  x: { color: "#5da9ff" },
-  o: { color: "#ff6b91" },
+  bmwOuter: { width: 72, height: 72, borderRadius: 36, backgroundColor: "#111", borderWidth: 5, borderColor: "#e8edf5", alignItems: "center", justifyContent: "center" },
+  bmwInner: { width: 52, height: 52, borderRadius: 26, backgroundColor: "#147cc1", borderWidth: 3, borderColor: "#fff", alignItems: "center", justifyContent: "center" },
+  bmwText: { color: "#fff", fontSize: 14, fontWeight: "900", letterSpacing: 1 },
+  audiBadge: { flexDirection: "row", alignItems: "center", justifyContent: "center" },
+  audiRing: { width: 27, height: 27, borderRadius: 14, borderWidth: 4, borderColor: "#e9edf5" },
+  audiRingOverlap: { marginLeft: -9 },
   button: { marginTop: 34, backgroundColor: "#3478f6", paddingVertical: 15, paddingHorizontal: 34, borderRadius: 15 },
   buttonText: { color: "#fff", fontSize: 17, fontWeight: "800" },
 });
