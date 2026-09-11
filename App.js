@@ -44,15 +44,23 @@ export default function App() {
         <Text style={styles.title}>Kółko i krzyżyk</Text>
         <Text style={styles.status}>{status}</Text>
         <View style={styles.board}>
-          {board.map((value, index) => (
-            <Pressable
-              key={index}
-              accessibilityLabel={"Pole " + (index + 1)}
-              onPress={() => play(index)}
-              style={({ pressed }) => [styles.cell, pressed && !value && styles.pressed]}
-            >
-              <Text style={[styles.mark, value === "X" ? styles.x : styles.o]}>{value}</Text>
-            </Pressable>
+          {[0, 1, 2].map((row) => (
+            <View key={row} style={styles.row}>
+              {[0, 1, 2].map((column) => {
+                const index = row * 3 + column;
+                const value = board[index];
+                return (
+                  <Pressable
+                    key={index}
+                    accessibilityLabel={"Pole " + (index + 1)}
+                    onPress={() => play(index)}
+                    style={({ pressed }) => [styles.cell, pressed && !value && styles.pressed]}
+                  >
+                    <Text style={[styles.mark, value === "X" ? styles.x : styles.o]}>{value}</Text>
+                  </Pressable>
+                );
+              })}
+            </View>
           ))}
         </View>
         <Pressable onPress={reset} style={styles.button}>
@@ -70,8 +78,9 @@ const styles = StyleSheet.create({
   eyebrow: { color: "#7f8ba8", fontSize: 12, fontWeight: "800", letterSpacing: 2.5 },
   title: { color: "#fff", fontSize: 34, fontWeight: "900", marginTop: 8 },
   status: { color: "#cbd5e1", fontSize: 20, fontWeight: "700", marginTop: 18, marginBottom: 28 },
-  board: { width: "100%", maxWidth: 360, aspectRatio: 1, flexDirection: "row", flexWrap: "wrap", gap: 8 },
-  cell: { width: "31.8%", height: "31.8%", borderRadius: 18, backgroundColor: "#151c2d", alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: "#27324b" },
+  board: { width: "100%", maxWidth: 340, aspectRatio: 1, gap: 8 },
+  row: { flex: 1, flexDirection: "row", gap: 8 },
+  cell: { flex: 1, aspectRatio: 1, borderRadius: 18, backgroundColor: "#151c2d", alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: "#27324b" },
   pressed: { backgroundColor: "#202b43", transform: [{ scale: 0.97 }] },
   mark: { fontSize: 58, fontWeight: "900" },
   x: { color: "#5da9ff" },
